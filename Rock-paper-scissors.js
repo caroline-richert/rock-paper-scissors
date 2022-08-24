@@ -1,26 +1,25 @@
 // Functions to generate a radom Itemchoice by the Computer
 
-function getSign() {
-    return Math.floor((Math.random() * 3) + 1)
+function getRandomIndex(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const CHOICES = ["rock", "paper", "scissors"]
 
 function getComputerChoice () {
-    const numberRPS = getSign();
-    if (numberRPS === 1) {
-        console.log("Rock");
-    } else if (numberRPS === 2) {
-        console.log("Paper");
-    }   else {
-        console.log("Scissors");
-    }
-}
+    const index = getRandomIndex(0, 2);
 
-//Palying a Round of Rock, Paper, Scissors
+    return CHOICES[index];
+}
+console.log(getComputerChoice());
+
+//Playing a Round of Rock, Paper, Scissors
 function playRound(playerSelection, computerSelection) {
     // your code here!
-  }
+}
    
-  const playerSelection = "rock";
-  const computerSelection = getComputerChoice();
-  console.log(playRound(playerSelection, computerSelection));
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
