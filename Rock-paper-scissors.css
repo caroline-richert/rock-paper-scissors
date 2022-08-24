@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    background-color: rgb(245, 238, 230);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+header {
+    width: 80%;
+    background-color: lightgray;
+    margin: 10px auto 10px auto;
+}
