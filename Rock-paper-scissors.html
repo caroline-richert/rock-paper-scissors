@@ -10,18 +10,31 @@
 </head>
 <body>
     <header>
-        <h1>Let's Play a Game...</h1>
-        <h2>Choose Your Ally:</h2>
+        <h1>Rock Paper Scissors</h1>
     </header>
+
     <main>
-        <button id="Rock">Rock</button>
-        <button id="Paper">Paper</button>
-        <button id="Scissors">Scissors</button>
-        <div id="YouWin">You win!</div>
-        <div id="YouLoose">You've lost. Try again!</div>
-        <div id="Score">
-            <h2>Score</h2>
+        <h2>Score</h2>
+        <div id="scoreboard">
+            <div class="badge" id="player-label">Player</div>
+            <div class="badge" id="comp-label">Comp</div>
+            <span id="player-score">0</span>:<span id="comp-score">0</span>
         </div>
+
+        <div class="result">
+            <p>Yay, you win!</p>
+        </div>
+
+        <div class="choices">
+            <button id="rock">ROCK</button>
+            <button id="paper">PAPER</button>
+            <button id="scissors">SCISSORS</button>
+        </div>
+
+        <div id="action-message">
+            <p>Choose your ally!</p>
+        </div>
+        
     </main>
 
     
