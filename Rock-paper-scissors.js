@@ -4,7 +4,7 @@ let compScore = 0;
 const playerScore_span = document.getElementById("player-score");
 const compScore_span = document.getElementById("comp-score");
 const scoreBoard_div = document.querySelector("#scoreboard");
-const result_div = document.querySelector(".result");
+const result_p = document.querySelector(".result > p");
 
 //Variables for buttons
 const btn_rock = document.getElementById("rock");
@@ -20,14 +20,22 @@ function getComputerChoice () {
 
 function win() {
     playerScore++;
+    playerScore_span.innerHTML = playerScore;
+    compScore_span.innerHTML = compScore;
+    result_div.innerHTML = "Yay! You've won!"
 }
 
 function lose() {
-    
+    compScore++;
+    playerScore_span.innerHTML = playerScore;
+    compScore_span.innerHTML = compScore;
+    result_div.innerHTML = "Sorry Bro. Try again!"
 }
 
 function draw() {
-    
+    playerScore_span.innerHTML = playerScore;
+    compScore_span.innerHTML = compScore;
+    result_p.innerHTML = "DRAW!"
 }
 
 function game (playerSelection) {
