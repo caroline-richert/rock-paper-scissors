@@ -1,6 +1,6 @@
 // Variables for for a Scoreboard
-const playerScore = 0;
-const compScore = 0;
+let playerScore = 0;
+let compScore = 0;
 const playerScore_span = document.getElementById("player-score");
 const compScore_span = document.getElementById("comp-score");
 const scoreBoard_div = document.querySelector("#scoreboard");
@@ -18,9 +18,37 @@ function getComputerChoice () {
     return choices[randomNumber];
 }
 
+function win() {
+    playerScore++;
+}
+
+function lose() {
+    
+}
+
+function draw() {
+    
+}
+
 function game (playerSelection) {
     const computerSelection = getComputerChoice();
-    // Hier geht's weiter.
+    switch(playerSelection + computerSelection) {
+        case "rockscissors":
+        case "scissorspaper":
+        case "paperrock":
+            win();
+            break;
+        case "rockpaper":
+        case "paperscissors":
+        case "scissorsrock":
+            lose();
+            break;
+        case "rockrock":
+        case "paperpaper":
+        case "scissorsscissors":
+            draw();
+            break;
+    }
 }
 
 
