@@ -4,12 +4,23 @@
     box-sizing: border-box;
 }
 
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: space-around;
     background-color: rgb(245, 238, 230);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid rgb(212, 205, 190);
+    width: 80%;
+    height: 80%;
+    padding: 20px 20px;
+    margin: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
 }
 
@@ -54,7 +65,7 @@ header {
     right: -20px;
 }
 
-.result{
+.result, .items{
     font-size: 30px;
     font-weight: bold;
     color: rgb(170, 138, 80);
@@ -68,12 +79,15 @@ header {
 
 button {
     margin: 10px 10px;
-    width: 100px;
-    height: 30px;
+    width: 150px;
+    height: 50px;
     background-color: navy;
     border: 1px solid navy;
     color: white;
     font-weight: bold;
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 button:hover {
@@ -81,12 +95,29 @@ button:hover {
     border: 2px solid white;
 }
 
-button:active {
-    background-color: white;
-    border: 1px solid white;
-    color: navy;
-}
-
 #action-message {
     margin-top: -15px;
 }
+
+/* Styles for Button-win/lose/draw animation */
+.green-glow {
+    background-color: rgb(59, 90, 12);
+    border: 1px solid rgb(59, 90, 12);
+    color: white;
+    font-weight: bold;
+}
+
+.red-glow {
+    background-color: rgb(170, 14, 14);
+    border: 1px solid rgb(170, 14, 14);
+    color: lightgray;
+    font-weight: bold;
+}
+
+.gray-glow {
+    background-color: gray;
+    border: 1px solid gray;
+    color: black;
+    font-weight: bold;
+}
+
