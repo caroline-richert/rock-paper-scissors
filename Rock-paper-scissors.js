@@ -5,6 +5,8 @@ const playerScore_span = document.getElementById("player-score");
 const compScore_span = document.getElementById("comp-score");
 const scoreBoard_div = document.querySelector("#scoreboard");
 const result_p = document.querySelector(".result");
+
+//Variables for Items
 let playerItem_span = document.querySelector(".playerItem");
 let compItem_span = document.querySelector(".compItem");
 
@@ -14,17 +16,20 @@ const btn_paper = document.getElementById("paper");
 const btn_scissors = document.getElementById("scissors");
 
 
+//Function getting a random choice
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"]
     const randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
 
+//Displays items of Player and Comp
 function items(playerSelection, computerSelection) {
     playerItem_span.innerHTML = playerSelection;
     compItem_span.innerHTML = computerSelection;
 }
 
+//Functions to evaluate selections against each other and increases a Score, shows result of a round
 function win(playerSelection, computerSelection) {
     playerScore++;
     playerScore_span.innerHTML = playerScore;
@@ -56,6 +61,7 @@ function draw(playerSelection, computerSelection) {
 
 }
 
+//The Game: Compares Player's and Com's choices
 function game (playerSelection) {
     computerSelection = getComputerChoice();
     switch(playerSelection + computerSelection) {
@@ -75,16 +81,25 @@ function game (playerSelection) {
             draw(playerSelection, computerSelection);
             break;
     }
+    endGame();
 }
 
+//Main function starts game() through clicking on the buttons
 function main () {
     btn_rock.addEventListener('click', () => game("rock"));
     btn_paper.addEventListener('click', () => game("paper"));
     btn_scissors.addEventListener('click', () => game("scissors"));
 }
 
-//for (let i = 0; i < 5; i++) {
-    // Hier weitermachen.... 5 Rounds -> Then display win, lose or tie!
- //}
-
 main();
+
+//Function ends game and reloads page after confirming
+function endGame () {
+   if (playerScore === 5) {
+    confirm("Yay, you've won!");
+    window.location.reload();;
+   } else if (compScore === 5) {
+    confirm("Sorry, you've lost. Try again.");
+    window.location.reload();;
+   }
+}
